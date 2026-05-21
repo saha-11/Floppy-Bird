@@ -41,12 +41,6 @@ Avoid:
 
 ---
 
-## 📸 Screenshots
-
-(Add screenshots later)
-
----
-
 ## 🛠️ Built With
 
 - HTML
