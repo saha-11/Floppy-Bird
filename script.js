@@ -1,24 +1,44 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-function resizeCanvas(){
+function resizeCanvas() {
 
-if(window.innerWidth<=768){
+/* Always use phone ratio */
 
-/* PHONE → portrait */
-canvas.width=400;
-canvas.height=700;
+const ratio = 9 / 16;
+
+/* available space */
+
+let screenW =
+window.innerWidth;
+
+let screenH =
+window.innerHeight;
+
+/* fit inside screen */
+
+if(
+screenW / screenH >
+ratio
+){
+
+canvas.height =
+screenH - 20;
+
+canvas.width =
+canvas.height *
+ratio;
 
 }
 
 else{
 
-/* LAPTOP → landscape */
-canvas.width=
-window.innerWidth;
+canvas.width =
+screenW - 20;
 
-canvas.height=
-window.innerHeight;
+canvas.height =
+canvas.width /
+ratio;
 
 }
 
